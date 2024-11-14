@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -35,4 +38,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.article-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.article-card h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.article-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.article-card a:hover {
+  text-decoration: underline;
 }
