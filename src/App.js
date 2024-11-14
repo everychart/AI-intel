@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+
 function App() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,7 +11,7 @@ function App() {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/articles');
+        const response = await fetch(`${API_URL}/api/articles`);
         if (!response.ok) {
           throw new Error('Failed to fetch articles');
         }
