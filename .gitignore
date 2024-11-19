@@ -23,3 +23,22 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Environment variables
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Large files and directories
+/data
+*.zip
+*.gz
+*.tar
+*.rar

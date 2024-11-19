@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import './App.css';
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
@@ -7,11 +8,13 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [feedType, setFeedType] = useState('ai-intel');
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch(`${API_URL}/api/articles`);
+        setLoading(true);
+        const response = await fetch(`${API_URL}/api/articles?feedType=${feedType}`);
         if (!response.ok) {
           throw new Error('Failed to fetch articles');
         }
@@ -25,7 +28,7 @@ function App() {
     };
 
     fetchArticles();
-  }, []);
+  }, [feedType]);
 
   if (loading) return <div>Loading articles...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -34,6 +37,20 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>AI Investment News</h1>
+        <div className="feed-toggle">
+          <button 
+            className={feedType === 'ai-intel' ? 'active' : ''}
+            onClick={() => setFeedType('ai-intel')}
+          >
+            AI Intel
+          </button>
+          <button 
+            className={feedType === 'slack' ? 'active' : ''}
+            onClick={() => setFeedType('slack')}
+          >
+            Slack Feed
+          </button>
+        </div>
       </header>
       <main>
         {articles.map((article, index) => (
@@ -41,7 +58,7 @@ function App() {
             <h2>{article.title}</h2>
             <p><strong>Source:</strong> {article.source}</p>
             <p><strong>Published:</strong> {new Date(article.pubDate).toLocaleDateString()}</p>
-            <p><strong>AI Analysis:</strong> {article.analysis.summary}</p>
+            <p>{article.description}</p>
             <a href={article.link} target="_blank" rel="noopener noreferrer">Read more</a>
           </div>
         ))}
