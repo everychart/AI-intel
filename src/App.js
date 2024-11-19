@@ -1,4 +1,3 @@
-cat > src/App.js << 'EOL'
 import React from 'react';
 import './App.css';
 
@@ -17,4 +16,3 @@ function App() {
 }
 
 export default App;
-EOL
