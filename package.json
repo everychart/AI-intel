@@ -39,6 +39,10 @@
   },
   "devDependencies": {
     "gh-pages": "^6.2.0"
+<<<<<<< HEAD
   },
   "homepage": "https://everychart.github.io/AI-intel"
+=======
+  }
+>>>>>>> 84bcb41 (initial commit)
 }
