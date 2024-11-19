@@ -6,7 +6,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://your-backend-url/api/articles')
+    fetch('https://ai-intel-backend.onrender.com/api/articles')
       .then(response => response.json())
       .then(data => {
         setArticles(data);
