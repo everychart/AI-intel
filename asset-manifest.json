@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/AI-intel/static/css/main.08509eee.css",
+    "main.js": "/AI-intel/static/js/main.73fc28b5.js",
+    "static/js/453.9a803319.chunk.js": "/AI-intel/static/js/453.9a803319.chunk.js",
+    "index.html": "/AI-intel/index.html",
+    "main.08509eee.css.map": "/AI-intel/static/css/main.08509eee.css.map",
+    "main.73fc28b5.js.map": "/AI-intel/static/js/main.73fc28b5.js.map",
+    "453.9a803319.chunk.js.map": "/AI-intel/static/js/453.9a803319.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08509eee.css",
+    "static/js/main.73fc28b5.js"
+  ]
+}
